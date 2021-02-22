@@ -77,6 +77,9 @@ jobs:
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE $OPENWRTROOT/.config
         cat config/lean/bcm27xx/rpi-lean-extra.config >> $OPENWRTROOT/.config
         cd $OPENWRTROOT
+        ../$DIY_SH
+        ../scripts/preset-clash-core.sh armv8
+        ../scripts/preset-terminal-tools.sh
 
     - name: Download Package
       id: package
